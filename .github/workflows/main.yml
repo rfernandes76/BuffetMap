@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuffetMap</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #8B0000; color: white; padding: 10px; text-align: center; }
+        #map { height: 500px; width: 100%; }
+        footer { background: #f4f4f4; text-align: center; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BuffetMap</h1>
+        <p>Encontre Buffets Perto de Você</p>
+    </header>
+
+    <div id="map"></div>
+
+    <footer>
+        <p>BuffetMap &copy; 2025</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            const center = { lat: -23.55052, lng: -46.633308 }; // SP
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: center,
+            });
+
+            new google.maps.Marker({
+                position: center,
+                map: map,
+                title: "Exemplo de Buffet",
+            });
+        }
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
